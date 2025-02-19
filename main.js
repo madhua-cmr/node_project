@@ -1,35 +1,16 @@
 import express from "express";
-
+import movieRoutes from "./routes/movies.route.js"
 const app=express();
 const PORT=5000;
 app.get("/",(req,res)=>{
     res.json({msg:"Hello Everyone"});
-
-
 })
 
 
-//crud
 
-//reading
-app.get("/movies",()=>{
+//client -->  middleware -->server
+app.use('/movies',movieRoutes);
 
-})
-
-//creating
-app.post("/movies",()=>{
-    
-})
-
-//update
-app.put("/movies/:id",()=>{
-    
-})
-
-//delete
-app.delete("/movies/:id",()=>{
-    
-})
 
 
 app.listen(PORT,()=>{
